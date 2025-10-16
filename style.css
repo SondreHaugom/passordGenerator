@@ -1,138 +1,189 @@
-/* Reset og grunnleggende */
+/* Generell tilbakestilling og fonter */
+:root {
+    /* Fargepalett */
+    --primary-color: #333; /* Mørk tekst og elementer */
+    --secondary-color: #fff; /* Bakgrunn */
+    --accent-color: #007bff; /* En ren blå for aksent/knapp */
+    --accent-dark-hover: #0056b3; /* Mørkere blå for hover */
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lett skygge */
+    --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.15); /* Skygge for hovedkort */
+
+    /* Typografi */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background: #203647; /* Moderne, dyp blågrønn */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header */
-header {
+    font-family: var(--font-body);
+    background-color: #f4f7fa; /* Veldig lys grå bakgrunn */
+    color: var(--primary-color);
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0 1rem 0;
-    background: #16202a;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Topptekst (Header) */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-color);
     letter-spacing: 1px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-decoration: none;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-top: 0.5rem;
-    filter: drop-shadow(0 2px 6px #222e3c66);
-}
-
-/* Main */
+/* Hovedinnhold (Main) - Kort-stil */
 main {
-    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem 2rem 1rem;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
+/* Inndatafelt for passordlengde */
 .password-length {
-    width: 200px;
-    padding: 0.75rem;
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
     border-radius: 8px;
-    border: 1.5px solid #465870;
-    margin-bottom: 1.5rem;
     font-size: 1.1rem;
-    background: #22304a;
-    color: #fff;
-    outline: none;
-    transition: border 0.2s;
+    text-align: center;
+    transition: border-color 0.3s ease;
 }
 
 .password-length:focus {
-    border: 1.5px solid #5cc8d7;
-    background: #253450;
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
 
+/* Knapp (Button) */
 .generate-btn {
-    background: #5cc8d7;
-    color: #203647;
-    padding: 0.9rem 2.5rem;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(32,54,71,0.08);
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    margin-bottom: 2rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .generate-btn:hover {
-    background: #44b4c2;
-    transform: translateY(-2px) scale(1.03);
+    background-color: var(--accent-dark-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-light);
 }
 
+.generate-btn:active {
+    transform: translateY(1px);
+}
+
+/* Visningsområde for passord */
 .password-display {
-    background: #22304a;
-    border-radius: 10px;
-    box-shadow: 0 2px 18px rgba(32,54,71,0.12);
-    padding: 2rem 2.5rem;
-    min-width: 310px;
+    background-color: #e9ecef; /* Lys grå bakgrunn for kontrast */
+    border-radius: 8px;
+    padding: 20px;
     text-align: center;
+    border: 1px solid #dee2e6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .password-label {
-    color: #b6c5d2;
-    font-size: 1.05rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: #6c757d; /* Dempet tekst */
+    margin-bottom: 8px;
     font-weight: 500;
-    letter-spacing: 0.05em;
 }
 
 .password-output {
-    font-size: 1.4rem;
-    color: #5cc8d7;
-    background: #16202a;
+    min-height: 25px; /* Sikrer at feltet har litt høyde selv om passordet er tomt */
+    font-family: monospace, sans-serif; /* Monospace for passord ser bra ut */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    word-wrap: break-word; /* Sikrer at lange passord brytes */
+    padding: 5px;
+    margin-bottom: 15px; /* Litt plass til kopieringsknappen */
+}
+
+/* Kopieringsknapp */
+.copy-btn {
+    background-color: #28a745; /* Grønn farge for "kopier" aksjon */
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
     border-radius: 6px;
-    padding: 0.8rem 1.2rem;
-    word-break: break-all;
-    font-family: 'Consolas', monospace;
-    margin: 0.5rem 0 0 0;
-    min-height: 2.5rem;
-    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
 }
 
-/* Footer */
+.copy-btn:hover {
+    background-color: #218838; /* Mørkere grønn på hover */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.copy-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 1px 2px rgba(40, 167, 69, 0.2);
+}
+
+.copy-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
+}
+
+/* Bunntekst (Footer) */
 footer {
+    width: 100%;
     text-align: center;
-    padding: 1.3rem 0 1rem 0;
-    color: #b6c5d2;
-    background: #16202a;
-    font-size: 1rem;
-    letter-spacing: 0.03em;
-    margin-top: auto;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+    padding: 20px 0;
+    margin-top: auto; /* Skyver bunnteksten til bunnen */
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
+/* Responsivitet for mindre skjermer (valgfritt, men anbefalt) */
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 25px;
+    }
+
+    .password-output {
+        font-size: 1.2rem;
+    }
+}

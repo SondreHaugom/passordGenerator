@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let input = document.querySelector(".password-length");
     let btn = document.querySelector(".generate-btn");
     let result = document.querySelector(".password-output")
+    let copyBtn = document.querySelector(".copy-btn"); 
 
 btn.addEventListener("click", function() {
     let length = input.value;
@@ -20,8 +21,20 @@ function generatePassword(length) {
         password += charset[randomIndex];
     }
     result.textContent = password;
+
     return password;
 }
 
+copyBtn.addEventListener("click", function () {
+    let password = result.textContent;
+    if (password) {
+        navigator.clipboard.writeText(password).then(function() {
+            alert("Password copied to clipboard!");
+        }); 
+    } else {
+        alert("No password to copy!");
+    }
+}); 
 
 });
+
