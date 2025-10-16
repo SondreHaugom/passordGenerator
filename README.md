@@ -1,6 +1,6 @@
 # 🔐 Passordgenerator  
 
-![Status](https://img.shields.io/badge/status-Ferdig-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-Under%20arbeid-yellow?style=for-the-badge)
 ![Lisens](https://img.shields.io/badge/Lisens-MIT-blue?style=for-the-badge)
 ![HTML](https://img.shields.io/badge/Bygget%20med-HTML-orange?style=for-the-badge)
 ![CSS](https://img.shields.io/badge/Stylet%20med-CSS-blueviolet?style=for-the-badge)
