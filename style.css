@@ -1,0 +1,138 @@
+/* Reset og grunnleggende */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #203647; /* Moderne, dyp blågrønn */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0 1rem 0;
+    background: #16202a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-top: 0.5rem;
+    filter: drop-shadow(0 2px 6px #222e3c66);
+}
+
+/* Main */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem 2rem 1rem;
+}
+
+.password-length {
+    width: 200px;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1.5px solid #465870;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    background: #22304a;
+    color: #fff;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.password-length:focus {
+    border: 1.5px solid #5cc8d7;
+    background: #253450;
+}
+
+.generate-btn {
+    background: #5cc8d7;
+    color: #203647;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(32,54,71,0.08);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-bottom: 2rem;
+}
+
+.generate-btn:hover {
+    background: #44b4c2;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.password-display {
+    background: #22304a;
+    border-radius: 10px;
+    box-shadow: 0 2px 18px rgba(32,54,71,0.12);
+    padding: 2rem 2.5rem;
+    min-width: 310px;
+    text-align: center;
+}
+
+.password-label {
+    color: #b6c5d2;
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.password-output {
+    font-size: 1.4rem;
+    color: #5cc8d7;
+    background: #16202a;
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+    word-break: break-all;
+    font-family: 'Consolas', monospace;
+    margin: 0.5rem 0 0 0;
+    min-height: 2.5rem;
+    letter-spacing: 0.08em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.3rem 0 1rem 0;
+    color: #b6c5d2;
+    background: #16202a;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+}
+
